@@ -1,0 +1,545 @@
+:root {
+	--fondo-claro: #E7F6F2;
+	--claro: #A5C9CA;
+	--azul: #395B64;
+	--fondo-clarol: #2C3333;
+	--verdeazulado: #045256;
+	--GRIS: #9AB8BA;
+	--CLARO: #DDF7F8;
+	--OSCURO: #0B1516;
+	--verde: #00d848ee;
+	--rojo: #d30000ea;
+
+
+}
+
+
+
+
+/*=============================================
+GLOBAL
+=============================================*/
+* {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a:visited,
+a:link,
+a:focus,
+a:hover,
+a:active {
+	list-style: none;
+	text-decoration: none;
+}
+
+.fc-today {
+	background: rgba(255, 255, 255, 0) !important;
+
+}
+
+/*DARLE DISEÑO A LA BARRA*/
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--GRIS);
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--OSCURO);
+	border-radius: 50px;
+}
+
+
+/*=============================================
+HEADER
+=============================================*/
+
+header {
+	position: fixed;
+	top: 0;
+	z-index: 3;
+}
+
+header .grid-container {
+	display: grid;
+	grid-template-columns: 3fr 5fr 1fr 1fr 1fr 1fr;
+}
+
+header .grid-item {
+	text-align: center;
+}
+
+header .bloqueReservas {
+	position: relative;
+}
+
+
+header .bloqueReservas .campana-y-reserva {
+	background: #FFFBEE;
+	cursor: pointer;
+}
+
+header .bloqueReservas .fa-concierge-bell {
+	font-size: 25px;
+	color: #847059;
+}
+
+header .bloqueReservas .fa-caret-down,
+header .bloqueReservas .fa-caret-up {
+	font-size: 25px;
+	color: #236AA1;
+}
+
+header .formReservas {
+	position: absolute;
+	top: 52px;
+	width: 350px;
+	height: auto;
+	left: 0px;
+	z-index: 2;
+	background: #395b64cb;
+}
+
+header .formReservas .input-group-lg input,
+header .formReservas select {
+	font-size: 14px;
+}
+
+header .formReservas input[type="submit"] {
+	background: #2C3333;
+	font-size: 16px;
+}
+
+header .fa-user {
+	font-size: 25px;
+	color: #DFDAD4;
+	cursor: pointer;
+}
+
+header .idiomas span {
+	cursor: pointer;
+}
+
+header .botonMenu i {
+	font-size: 30px;
+	color: #B5A99B;
+	cursor: pointer;
+}
+
+/*=============================================
+MENU
+=============================================*/
+nav.menu {
+	position: fixed;
+	z-index: 10;
+	top: 60px;
+	background-color: black;
+	display: none;
+}
+
+nav.menu li>.nav-link {
+	transition: .5s all;
+}
+
+nav.menu li:hover>.nav-link {
+	background: #197DB1;
+	transition: .5s all;
+}
+
+.menuMovil {
+	display: none;
+	position: fixed;
+	background: rgba(0, 0, 0, .8);
+	width: 100%;
+	height: 90vh;
+	z-index: 2;
+	overflow-x: hidden;
+}
+
+.menuMovil .formReservas input[type="button"] {
+	background: black;
+	font-size: 16px;
+}
+
+.menuMovil .formReservas {
+	background: rgba(0, 83, 147, .8);
+	position: relative;
+	top: 23px;
+}
+
+.menuMovil .nav {
+	background-color: black !important;
+}
+
+/*=============================================
+BANNER
+=============================================*/
+
+.banner .fade-slider {
+	position: relative;
+}
+
+.banner .verMas {
+	position: absolute;
+	width: 60px;
+	line-height: 60px;
+	bottom: 5%;
+	left: 50%;
+	font-size: 30px;
+	transform: translate(-50%, 0%);
+	cursor: pointer;
+}
+
+/*=============================================
+PLANES
+=============================================*/
+.planes {
+	background: var(--fondo-claro);
+	padding: 60px 0;
+}
+
+.planes .grid-container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 15px;
+}
+
+.planes .grid-item {
+	position: relative;
+	cursor: pointer;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: var(--shadow-md);
+}
+
+.planes .grid-item:hover figure {
+	background: rgba(0, 148, 136, 0.85);
+}
+
+.planes .grid-item:nth-child(1) {
+	grid-column: 1 / span 3;
+}
+
+.planes .grid-item:nth-child(2) {
+	grid-column: 4 / span 3;
+	height: 320px;
+}
+
+.planes .grid-item:nth-child(3) {
+	grid-column: 1 / span 2;
+}
+
+.planes .grid-item:nth-child(4) {
+	grid-column: 3 / span 2;
+}
+
+.planes .grid-item:nth-child(5) {
+	grid-column: 5 / span 2;
+}
+
+.planes .grid-item figure {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .4);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s all;
+}
+
+.planes .grid-item figure h1 {
+	font-size: 24px !important;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.planesMovil li {
+	overflow: hidden;
+	padding: 10px;
+}
+
+.planesMovil .slide-inner {
+	border-radius: 15px;
+	background: white;
+	padding: 20px;
+	box-shadow: var(--shadow-md);
+}
+
+.planesMovil img {
+	width: 100% !important;
+	border-radius: 10px;
+}
+
+/*=============================================
+HABITACIONES
+=============================================*/
+.habitaciones {
+	padding: 60px 0;
+}
+
+.habitaciones .row div[class*="col"] figure {
+	position: relative;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: var(--shadow-md);
+	margin-bottom: 30px;
+}
+
+.habitaciones .row div[class*="col"] figure img {
+	transform: scale(1);
+	transition: 0.6s all ease-in-out;
+}
+
+.habitaciones .row div[class*="col"] figure:hover img {
+	transform: scale(1.05);
+}
+
+.habitaciones .row div[class*="col"] figure h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: .3s all;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 10px 20px;
+	border-radius: 30px;
+	color: var(--OSCURO) !important;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.habitaciones .row div[class*="col"] figure h1:hover {
+	background: var(--azul);
+	color: white !important;
+}
+
+.habitaciones .row div[class*="col"] figure p {
+	background: white;
+	color: var(--claro);
+	padding: 15px;
+	margin-bottom: 0;
+}
+
+.habitaciones .row div[class*="col"] figure h3 {
+	background: var(--azul);
+	color: white;
+	padding: 10px;
+	font-weight: 700;
+}
+
+.habitaciones .row div[class*="col"] figure h5 {
+	color: var(--claro);
+	font-weight: 400;
+	padding: 10px;
+}
+
+/*=============================================
+RECORRIDO PUEBLO
+=============================================*/
+
+.recorridoPueblo .grid-container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+.recorridoPueblo .grid-item {
+	text-align: center;
+}
+
+
+.recorridoPueblo .grid-item:nth-child(1) {
+	grid-row: 1 / span 1;
+}
+
+.recorridoPueblo .grid-item:nth-child(2) {
+	grid-row: 2 / span 1;
+}
+
+.recorridoPueblo .grid-item:nth-child(3) {
+	grid-row: 1 / span 2;
+}
+
+.contactenos {
+	position: relative;
+	margin-top: -80px;
+}
+
+/*=============================================
+MAPA
+=============================================*/
+
+.mapa {
+	position: relative;
+}
+
+.mapa .info {
+	color: #8B7556;
+	position: absolute;
+	width: 400px;
+	right: 10%;
+	top: 10%;
+	background-color: #FFCC29;
+	height: 370px;
+}
+
+.mapa .info h3 {
+
+	font-weight: bold;
+}
+
+/*=============================================
+FOOTER
+=============================================*/
+footer {
+	padding-bottom: 20px;
+}
+
+footer .grid-container {
+	display: grid;
+	grid-template-columns: 2fr 4fr 2fr;
+	gap: 1px;
+}
+
+footer .grid-item {
+	background-color: var(--fondo-clarol);
+	text-align: center;
+	color: white;
+	padding: 30px;
+}
+
+footer .grid-item h3 {
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+footer .grid-item p {
+	color: var(--claro);
+}
+
+.redesMovil {
+	visibility: hidden;
+	position: fixed;
+	bottom: 0px;
+	z-index: 100;
+	width: 100%;
+	background: var(--azul);
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.redesMovil .nav-link {
+	color: white !important;
+	font-size: 20px;
+	padding: 15px;
+}
+
+/*=============================================
+SCROLL UP
+=============================================*/
+#scrollUp {
+	bottom: 80px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background: var(--azul);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: var(--shadow-md);
+	font-size: 20px;
+}
+
+#scrollUp::after {
+	content: "\f077";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+/*=============================================
+MOBILE RESPONSIVENESS
+=============================================*/
+
+@media (max-width:768px) {
+
+	header .grid-container {
+		grid-template-columns: 1fr 1fr;
+		padding: 0 15px;
+	}
+
+	header .grid-item:nth-child(2),
+	header .grid-item:nth-child(3),
+	header .grid-item:nth-child(4) {
+		display: none;
+	}
+
+	.planes .grid-container {
+		grid-template-columns: 1fr;
+	}
+
+	.planes .grid-item:nth-child(n) {
+		grid-column: span 1;
+		height: 250px;
+	}
+
+	.habitaciones .row div[class*="col"] figure p {
+		padding: 10px;
+	}
+
+	.recorridoPueblo .grid-container {
+		grid-template-columns: 1fr;
+	}
+
+	.restaurante .grid-container {
+		grid-template-columns: 1fr;
+	}
+
+	.mapa .info {
+		width: 90%;
+		right: 5%;
+		left: 5%;
+		top: 20px;
+		position: relative;
+		height: auto;
+		padding: 20px;
+	}
+
+	footer .grid-container {
+		grid-template-columns: 1fr;
+	}
+
+	.redesMovil {
+		visibility: visible;
+	}
+
+	#scrollUp {
+		bottom: 70px;
+	}
+}

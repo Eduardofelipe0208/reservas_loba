@@ -1,0 +1,57 @@
+<?php
+
+$embarcaciones = ControladorEmbarcaciones::ctrMostrarEmbarcaciones();
+
+
+
+?>
+
+<!--=====================================
+embarcaciones MÓVIL
+======================================-->
+
+<div class="d-block d-lg-none planesMovil jd-slider bg-white" id="embarcaciones">
+
+	<h1 class="text-center py-3">EMBARCACIONES</h1>
+
+	 <div class="slide-inner">
+	 	
+		 <ul class="slide-area">
+
+		 	<?php foreach ($embarcaciones as $key => $value): ?>
+
+		 		<li>
+				
+				<a href="#modalPlanes" data-toggle="modal" descripcion="<?php echo 
+					$value["descripcion"]; ?>">
+					
+					<img src=<?php echo $servidor.$value["img"]; ?>>
+					<h6 class="text-uppercase"><?php echo $value["tipo"]; ?> </h6>
+					
+
+				</a>
+
+			</li>
+
+		 	<?php endforeach ?>
+		 	
+
+		 </ul>
+
+	 	<a class="prev" href="#">
+            <i class="fas fa-angle-left text-muted"></i>
+        </a>
+
+        <a class="next" href="#">
+            <i class="fas fa-angle-right text-muted"></i>
+        </a>
+
+ 	</div>
+
+  	<div class="controller">
+
+        <div class="indicate-area"></div>
+
+    </div>
+			   
+</div>
